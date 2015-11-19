@@ -1,0 +1,6 @@
+{
+  "Minecraft": {
+		"LogsDirectoryPath": "/opt/minecraft/logs",
+		"JsonDbFilePath":  "database.json"
+	}
+}

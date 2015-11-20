@@ -1,17 +1,13 @@
 ############################################################
-# Dockerfile to run ASP.NET vNext + Minecraft Server
-# Based on Microsoft ASP.NET Beta 7 Image
+# Dockerfile to run ASP.NET 5 + Minecraft Server
+# Based on Microsoft ASP.NET Beta RC1 Image for coreCLR
 ############################################################
 
-# use the Aspnet Beta 7 base image
-FROM microsoft/aspnet:1.0.0-beta7
+# use the Aspnet Beta RC1 base image for coreCLR
+FROM microsoft/aspnet:1.0.0-rc1-final-coreclr
 
 # Set the file maintainer
-MAINTAINER Julien CORIOLAND
-
-# https://github.com/aspnet/dnx/issues/1590#issuecomment-126965429
-ENV MONO_THREADS_PER_CPU=2000 
-
+MAINTAINER Julien CORIOLAND, Benjamin TALMARD
 
 # Create environment variables
 ENV MINECRAFT_SERVER_DIR /opt/minecraft
@@ -38,8 +34,8 @@ COPY ./aspnet-looserboard $LO0SERBOARD_SRC_DIR/
 # restore the nuget packages
 RUN dnu restore
 
-# expose the port 5004, the one used by Kestrel server
-EXPOSE 5004
+# expose the port 5000, the default one used by Kestrel server
+EXPOSE 5000
 
 ###################
 #                 #

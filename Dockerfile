@@ -17,9 +17,6 @@ ENV LO0SERBOARD_SRC_DIR /opt/looserboard
 RUN mkdir -p $MINECRAFT_SERVER_DIR
 RUN mkdir -p $LO0SERBOARD_SRC_DIR
 
-# Install the latest version of the JDK, wget
-RUN apt-get -qq update && apt-get -qqy install default-jdk wget
-
 ###################
 #                 #
 # LOOSERBOARD     #
@@ -42,6 +39,9 @@ EXPOSE 5000
 # MINECRAFT       #
 #                 #
 ###################
+
+# Install the latest version of the JDK, wget
+RUN apt-get -qq update && apt-get -qqy install default-jdk wget
 
 # Set the minecraft server directory as working directory
 WORKDIR $MINECRAFT_SERVER_DIR

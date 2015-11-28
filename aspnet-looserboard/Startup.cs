@@ -60,7 +60,7 @@ namespace AspNetMinecraftLooserboard
             // Add the following to the request pipeline only in development environment.
             if (env.IsDevelopment())
             {
-                app.UseBrowserLink();
+                //app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
             }
             else
@@ -81,5 +81,8 @@ namespace AspNetMinecraftLooserboard
                     template: "{controller=Looserboard}/{action=Index}/{id?}");
             });
         }
+
+        // Entry point for the application.
+        public static void Main(string[] args) => WebApplication.Run<Startup>(args);
     }
 }

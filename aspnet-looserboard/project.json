@@ -21,8 +21,7 @@
   },
 
   "commands": {
-    "web": "Microsoft.AspNet.Server.Kestrel",
-    "gen": "Microsoft.Framework.CodeGeneration"
+    "web": "Microsoft.AspNet.Server.Kestrel --server.urls http://*:5000"
   },
 
   "frameworks": {
